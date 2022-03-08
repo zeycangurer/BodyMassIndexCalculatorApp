@@ -1,0 +1,7 @@
+{
+  "name": "BodyMassIndexCalculatorApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

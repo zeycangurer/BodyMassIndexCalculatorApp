@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>VKI Hesapla</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card color="light">
+    <ion-card-content>
+      Lütfen boy ve kilo bilgilerinizi giriniz.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list>
+
+  <ion-item>
+    <ion-range (ionChange)="hesapla()" min="50" max="300" color="tertiary" pin="true" [(ngModel)]="height">
+      <ion-label slot="start">Boy</ion-label>
+      <ion-label slot="end">{{height}} cm</ion-label>
+    </ion-range>
+  </ion-item> 
+
+  <ion-item>
+    <ion-range  (ionChange)="hesapla()" min="30" max="300" color="tertiary" pin="true" [(ngModel)]="weight">
+      <ion-label slot="start">Kilo</ion-label>
+      <ion-label slot="end">{{weight}} kg</ion-label>
+    </ion-range>
+  </ion-item> 
+
+ </ion-list>
+
+ <ion-card color="{{result<18 ? 'tertiary':result<25 ? 'success':result<30 ? 'warning':result<35 ? 'danger':'dark'}}">
+  <ion-card-content>
+    {{result ? result<18 ? 'ZAYIF':result<25 ? 'NORMAL':result<30 ? 'ŞİŞMAN':result<35 ? 'OBEZ':'AŞIRI OBEZ' :'Boy ve kilo değerlerini giriniz.'}}
+  </ion-card-content>
+</ion-card>
+
+<div style="text-align: center;">
+  <img style="width: 20%" src="../assets/{{result ? result<18 ? '1':result<25 ? '2':result<30 ? '3':result<35 ? '4':'5' :'1'}}.png">
+</div>
+
+</ion-content>
