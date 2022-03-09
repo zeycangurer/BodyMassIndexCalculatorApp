@@ -18,7 +18,7 @@ export class FolderPage implements OnInit {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
   }
 
-  hesapla(){
+  calculate(){
     this.result = (this.weight/((this.height/100)*(this.height/100)));
     console.log("height:"+this.height+" weight:"+this.weight+" SONUÇ:"+this.result);
   }

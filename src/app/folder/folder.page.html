@@ -17,14 +17,14 @@
   <ion-list>
 
   <ion-item>
-    <ion-range (ionChange)="hesapla()" min="50" max="300" color="tertiary" pin="true" [(ngModel)]="height">
+    <ion-range (ionChange)="calculate()" min="50" max="300" color="tertiary" pin="true" [(ngModel)]="height">
       <ion-label slot="start">Boy</ion-label>
       <ion-label slot="end">{{height}} cm</ion-label>
     </ion-range>
   </ion-item> 
 
   <ion-item>
-    <ion-range  (ionChange)="hesapla()" min="30" max="300" color="tertiary" pin="true" [(ngModel)]="weight">
+    <ion-range  (ionChange)="calculate()" min="30" max="300" color="tertiary" pin="true" [(ngModel)]="weight">
       <ion-label slot="start">Kilo</ion-label>
       <ion-label slot="end">{{weight}} kg</ion-label>
     </ion-range>
